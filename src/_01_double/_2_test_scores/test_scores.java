@@ -13,7 +13,7 @@ public static void main(String[] args) {
 		JOptionPane.showMessageDialog(null, "Oof, must of not even attended!! Make sure you do good in school.");
 	}
 	else if (scoreHolder > 20 && scoreHolder < 30) {
-		JOptionPane.showMessageDialog(null, "I recommend you study alot more, and attend alot more.");
+		JOptionPane.showMessageDialog(null, "I recommend you study a lot more, and attend a lot more.");
 	}
 	else if (scoreHolder > 30 && scoreHolder < 40) {
 		JOptionPane.showMessageDialog(null, "Maybe listen better and study more, better luck next time!");
@@ -25,10 +25,10 @@ public static void main(String[] args) {
 		JOptionPane.showMessageDialog(null, "Better than some, maybe take a few more hours out of your day to study more.");
 	}
 	else if (scoreHolder > 60 && scoreHolder < 70) {
-		JOptionPane.showMessageDialog(null, "Hey, thats not bad, but maybe study more and you will get better grades.");
+		JOptionPane.showMessageDialog(null, "Hey, that's not bad, but maybe study more and you will get better grades.");
 	}
 	else if (scoreHolder > 70 && scoreHolder < 80) {
-		JOptionPane.showMessageDialog(null, "Keep up the good work! Thats quite average, keep doing what your doing.");
+		JOptionPane.showMessageDialog(null, "Keep up the good work! That's quite average, keep doing what your doing.");
 	}
 	else if (scoreHolder > 80 && scoreHolder < 90) {
 		JOptionPane.showMessageDialog(null, "Nice!! You're doing a great job, I see you being pretty successful. Keep doing what you're doing");
