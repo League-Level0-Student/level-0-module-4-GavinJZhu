@@ -42,7 +42,10 @@ public class GooglyEyes extends PApplet {
     static final int HEIGHT = 600;
 
     PImage flushed;
-
+    int leftX = 136;
+	int leftY = 322; 
+	int rightX = 0;
+	
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -50,13 +53,42 @@ public class GooglyEyes extends PApplet {
     
     @Override
     public void setup() {
-         loadImage("C:\\Users\\Gavin\\git\\level-0-module-4-GavinJZhu\\images\\flushed.jpg");
+         flushed = loadImage("flushed.jpg");
         flushed.resize(WIDTH,HEIGHT);
     }
 
     @Override
-    public void draw() {
-
+    public void draw() {	  	
+    	background(flushed);
+    	
+    	fill(255,255,255);
+    	ellipse(136, 322, 300, 300);
+    	fill(255,255,255);
+    	ellipse(635, 326, 300, 300);
+    	if (mouseX<56) {
+    		leftX=56;
+    	}
+    	else if (mouseX>210) {
+    		leftX=210;
+    	}
+    	else {
+    		leftX=mouseX;    	
+    		}
+    	if (mouseY<250) {
+    		leftY=250;
+    	}
+    	else if (mouseY>400) {
+    		leftY=400;
+    	}
+    	else {
+    		leftY=mouseY;    	
+    		}
+    	rightX = leftX+500;
+    	fill(0,0,0);
+    	ellipse(leftX, leftY, 75, 75);
+    	fill(0,0,0);
+    	ellipse(rightX, leftY, 75, 75);
+    	
     }
 
     static public void main(String[] args) {
