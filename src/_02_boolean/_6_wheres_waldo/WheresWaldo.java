@@ -58,9 +58,10 @@ public class WheresWaldo extends PApplet {
 
     @Override
     public void draw() {
-    	if(mousePressed) {
-            System.out.println(mouseX+ ", " +mouseY);
-           }
+    	if(mouseX<373) {
+    		
+    	}
+    	
     }
 
     static public void main(String[] args) {
