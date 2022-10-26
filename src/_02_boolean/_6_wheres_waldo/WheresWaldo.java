@@ -5,6 +5,7 @@ import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.swing.JOptionPane;
 
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -42,7 +43,8 @@ public class WheresWaldo extends PApplet {
     static final int HEIGHT = 400;
 
     PImage waldo;
-
+int leftX = 0;
+int rightX = 0;
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -53,16 +55,21 @@ public class WheresWaldo extends PApplet {
         waldo = loadImage("waldo.jpg");
         waldo.resize(WIDTH, HEIGHT);
         background(waldo);
-       
+        JOptionPane.showMessageDialog(null, "Find Waldo, then click him.");
     }
 
     @Override
     public void draw() {
-    	if(mouseX<373) {
-    		
+    	    if (mousePressed) {	
+    			if(mouseX > 370 && mouseX < 420 && mouseY > 200 && mouseY < 283) {
+    				playWhoohoo();
+    		}
+    			else {
+    				playDoh();
+    			}
     	}
-    	
-    }
+    	}
+    
 
     static public void main(String[] args) {
         PApplet.main(WheresWaldo.class.getName());
