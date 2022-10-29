@@ -1,5 +1,7 @@
 package _03_char._3_pi_aloud;
 
+import game_tools.Sound;
+
 import java.util.Scanner;
 
 public class PiAloud {
@@ -20,14 +22,15 @@ public static void main(String[] args) {
     // 3. Print out 3 digits of Pi. The first value is "pi.charAt(0)", the second is "pi.charAt(1)"
     // Check the console shows 3.1
 	for (int i=0; i < pi.length(); i++) {
-		pi.charAt(i);
+		System.out.println(pi.charAt(i));
 	}
     // 4. Print ALL the digits of the Pi String, putting each digit on a new line  (hint: use a loop)
+
 
     // 5. Skip this step if your computer cannot play sounds.
     //if (canPlaySounds) {
         // Use the Sound.speak() method to speak each digit of Pi.
-        
+    Sound.speak(pi);
     //}
 
 
