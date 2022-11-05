@@ -1,16 +1,20 @@
 package _99_extra.pin_the_tail;
 
-import java.io.File;
+import processing.core.PApplet;
+import processing.core.PImage;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-
-import processing.core.PApplet;
+import java.io.File;
 
 public class PinTheTail extends PApplet {
-    static final int WIDTH = 800;
-    static final int HEIGHT = 600;
+    static final int WIDTH = 166;
+    static final int HEIGHT = 303;
+    PImage donkey;
+    PImage tail;
+    int tailX = 0;
+    int tailY = 0;
 
     @Override
     public void settings() {
@@ -19,18 +23,54 @@ public class PinTheTail extends PApplet {
 
     @Override
     public void setup() {
-        
+        donkey = loadImage("C:\\Users\\Gavin\\git\\level-0-module-4-GavinJZhu\\images\\donkey.jpg");
+        tail = loadImage("C:\\Users\\Gavin\\Documents\\download (2).png");
+        donkey.resize(WIDTH, HEIGHT);
+        tail.resize(30, 60);
+
     }
 
     @Override
     public void draw() {
-        
+     if(isInsideCBB()){
+         drawDonkey();
+     }
+     else {
+         drawColor();
+     }
+        drawTail();
+        rect(0, 0, 30, 30);
+        rect(123,240,40,40);
+        if (mousePressed) {
+                rect(mouseX,mouseY,15,15);
+            println(mouseX+", "+mouseY);
+            tailX = mouseX;
+            tailY = mouseY;
+        }
     }
 
     static public void main(String[] args) {
         PApplet.main(PinTheTail.class.getName());
     }
-    
+    public void drawTail(){
+        image(tail, tailX, tailY);
+    }
+    public void drawDonkey(){
+        background(donkey);
+    }
+    public void drawColor(){
+        background(196,196,196);
+    }
+    public boolean isInsideCBB(){
+        boolean inside = false;
+        float temp = dist(0,0,mouseX,mouseY);
+        if (temp < 30){
+            inside = true;
+        }
+        return inside;
+    }
+
+
     /*********************** DO NOT MODIFY THE CODE BELOW ********************/
 
     Clip clip = null;
