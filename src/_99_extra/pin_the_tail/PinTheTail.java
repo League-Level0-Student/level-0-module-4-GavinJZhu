@@ -23,15 +23,17 @@ public class PinTheTail extends PApplet {
 
     @Override
     public void setup() {
-        donkey = loadImage("C:\\Users\\Gavin\\git\\level-0-module-4-GavinJZhu\\images\\donkey.jpg");
-        tail = loadImage("C:\\Users\\Gavin\\Documents\\download (2).png");
-        donkey.resize(WIDTH, HEIGHT);
-        tail.resize(30, 60);
+    	
+        donkey = loadImage("/Users/league/git/level-0-module-4-GavinJZhu/src/_99_extra/pin_the_tail/donkey.jpg");
+       tail = loadImage("/Users/league/git/level-0-module-4-GavinJZhu/src/_99_extra/pin_the_tail/tail3.png");
+        tail.resize(60, 30);
+
 
     }
 
     @Override
     public void draw() {
+    	
      if(isInsideCBB()){
          drawDonkey();
      }
@@ -46,7 +48,7 @@ public class PinTheTail extends PApplet {
             println(mouseX+", "+mouseY);
             tailX = mouseX;
             tailY = mouseY;
-        }
+       }
     }
 
     static public void main(String[] args) {
