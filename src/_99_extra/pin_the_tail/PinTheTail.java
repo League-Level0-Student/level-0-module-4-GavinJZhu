@@ -33,29 +33,34 @@ public class PinTheTail extends PApplet {
 
     @Override
     public void draw() {
-    	
-     if(isInsideCBB()){
+    	boolean ifInBottomRight = false;
+    	if (mousePressed) {
+         	if(mouseX > 124 && mouseX < 164 && mouseY > 243 && mouseY < 281) {
+         		ifInBottomRight = true;
+         	}
+         }
+    	if(isInsideCBB() || ifInBottomRight){
          drawDonkey();
+         playWhoohoo();
      }
      else {
          drawColor();
      }
         drawTail();
         rect(0, 0, 30, 30);
-        rect(123,240,40,40);
         if (mousePressed) {
-                rect(mouseX,mouseY,15,15);
             println(mouseX+", "+mouseY);
             tailX = mouseX;
             tailY = mouseY;
        }
+       
     }
 
     static public void main(String[] args) {
         PApplet.main(PinTheTail.class.getName());
     }
     public void drawTail(){
-        image(tail, tailX, tailY);
+        image(tail, tailX-10, tailY-20);
     }
     public void drawDonkey(){
         background(donkey);
